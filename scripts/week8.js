@@ -101,6 +101,7 @@ $(document).ready(function () {
 		loop:true,
 		speed:2000,
 		pause:4000,
+		controls: true,
 	}); 
 
 	

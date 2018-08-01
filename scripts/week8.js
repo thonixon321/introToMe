@@ -100,7 +100,7 @@ $(document).ready(function () {
 	});
 	
     $("#lightSlider").lightSlider({
-		item:2,
+		item:3,
 		auto:true,
 		loop:true,
 		speed:2000,

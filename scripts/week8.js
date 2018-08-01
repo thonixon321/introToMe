@@ -44,6 +44,8 @@ $(document).ready(function () {
 	
 	$("#bigPhoto").attr("src", imageFolder + "Agua_Azul.jpg");
 	
+	$("#bigPhoto").hide();
+	
 	//$.each(thumbNames, function (i) {
   //  alert(thumbNames[i]);
 //});
@@ -79,6 +81,8 @@ $(document).ready(function () {
 		photoCaption = photoCaption.replace("_", " ");
         
 		$("#caption").text(photoCaption);
+		
+		$("#bigPhoto").show();
 		
 	});
 	$(".menu").hide();

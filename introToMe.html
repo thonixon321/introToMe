@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+
+<!--
+File Name: termproject-done.html
+Date: 06/05/18
+Programmer: Thomas Nixon
+-->
+
+
+<html lang="en">
+
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<meta name="author" content="Thomas Nixon">
+<base target="_blank"> <!-- open all links not marked "_self" in a new tab -->
+
+<title>Thomas Nixon Profile</title>
+	
+<link rel="stylesheet" href="css/titlepage-scroll.css">
+
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700' rel='stylesheet' type='text/css'>
+
+<link href="css/tpreset.css" rel="stylesheet" type="text/css">
+<link href="css/tpgrid.css" rel="stylesheet" type="text/css">
+<link href="css/tpstyle.css" rel="stylesheet" type="text/css">
+<link href="css/tpnavigation.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">	
+<link type="text/css" rel="stylesheet" href="css/lightslider.css" />                  
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>	
+
+<script>
+    var availableFuel = 25.00;
+    var running = false;
+    var odometer = 0;
+    var miles = 0;
+	var make = "";
+    
+function Vehicle () {
+    this.make = "";
+	this.make = make;
+    this.model = "";
+    this.year = "";
+    this.color = "";
+    this.style = "";
+    
+    this.running = running;
+    this.availableFuel = availableFuel;
+    this.odometer = odometer;
+	
+    
+    this.start = function () {
+        Vehicle.running = true;
+        alert("putting the keys in the ignition");
+    }
+    this.drive = function (miles) {
+        if  (availableFuel <= 0) {
+			alert("The vehicle has run out of gas!");
+			running = false;
+        }
+        else if (running = true) {
+            alert("driving now");
+            availableFuel -= (miles/25);
+            odometer += miles;
+            availableFuel = parseInt(availableFuel);
+            odometer = parseInt(odometer);
+        }
+		else if (Vehicle.running = false) {
+            alert("vehicle is not running");
+		}
+    }
+    this.honk = function () {
+        alert(make + " says honk. I have " + availableFuel + " gallons of fuel left, and my Odometer reads " + odometer);
+    }
+    this.stop = function () {
+        Vehicle.running = false;
+    }
+    this.addFuel = function(gallons) {
+        if (availableFuel <= 25) {
+            availableFuel += gallons;
+			alert("you added some fuel!");
+            if (availableFuel > 25) {
+                alert("fuel cannot be more than 25 gallons");
+            }
+        }
+    }
+
+}    
+    
+    
+function SportsCar () {}   
+
+SportsCar.prototype = new Vehicle();
+SportsCar.prototype.topSpeed = 150;
+SportsCar.prototype.horsePower = 300;
+    
+function Truck () {}
+
+Truck.prototype = new Vehicle();
+Truck.prototype.maxPullWeight = 0;
+Truck.prototype.fourWD = true;
+Truck.prototype.drive = function (miles) {
+	  if (running = true && availableFuel > 0) {
+          availableFuel -= (miles/10);
+          odometer += miles;
+	      if  (availableFuel <= 0) {
+		    alert("The truck has run out of gas!");
+		    running = false;
+		    availableFuel = 0;
+            }
+    }
+	  else {
+		  alert("car is not running");
+	  }
+  }
+
+function regularVehicle () {
+    myCar = new Vehicle();
+    myCar.start();
+    myCar.drive(100);
+    myCar.stop();
+    myCar.honk();
+    
+}
+
+function carVehicle () {
+    myOtherCar = new Vehicle();
+    myOtherCar.start();
+    myOtherCar.drive(25);
+    myOtherCar.stop();
+    myOtherCar.honk();
+}
+
+function truckVehicle () {
+    myTruck = new Truck();
+	make = "Truck";
+    myTruck.start();
+    myTruck.drive(100);
+    myTruck.stop();
+    myTruck.honk();
+}
+	
+function refuelMe () {
+	fuelTime = new Vehicle();
+	fuelTime.addFuel(10);
+}
+	
+function getJSONData(){
+
+var text = '{ "employees" : [' +
+'{ "firstName":"Corinna" , "lastName":"Nixon" },' +
+'{ "firstName":"Chuck" , "lastName":"Nixon" },' +
+'{ "firstName":"Tyler" , "lastName":"Nixon" } ]}';
+
+return text;
+}
+
+function getPeople () {
+	myFolks = JSON.parse(getJSONData());
+	
+	  for (x=0; x < myFolks.employees.length; x++) {
+		  opt = document.createElement("option");
+		  opt.text = myFolks.employees[x].firstName + " " + myFolks.employees[x].lastName;
+		  
+		  document.getElementById("Employees").appendChild(opt);
+		 
+	  }
+}
+    
+</script>
+</head>
+	
+<body>
+
+<div id="container2">
+
+<header>
+	<button class="hamburger">&#9776;</button>
+	<button class="cross">&#735;</button>
+
+<div class="menu">
+  <ul>
+    <li><a href="#intro2">Introduction</a></li>
+    <li><a href="#funfacts2">Fun Facts</a></li>
+    <li><a href="#common2">Common Uses</a></li>
+    <li><a href="#references2">References</a></li>
+  </ul>
+</div>
+  <h1 id="logo2">Meeting Thomas Nixon</h1>
+
+</header>
+
+<main>
+
+<section id="intro2">
+
+<h2 id="greatIntro">Introduction</h2>
+	<p>Hello, my name is Thomas Nixon. In this page I will display some skills I have learned using HTML, CSS, and JavaScript/jQuery. I will also be showing off my family! Also, the empty space below can be filled. Read more and find out how....</p>
+<div class="span_3_of_32">
+	<div class="bigPhoto">
+        <img id="bigPhoto" src="" alt="" height="700" width="600">
+        <br />
+        <div id="caption"></div>
+	</div>
+<h2>Just So You Know...</h2>
+<p>According to the dictionary, JavaScript is an object-oriented computer programming language commonly used to create interactive effects within web browsers.</p>
+
+
+
+<section id="funfacts2">
+
+<h2>Fun Facts</h2>
+
+<ol>
+    <li>This page is using CSS preprocessing with LESS files, and it is responsive with a mobile first approach. LESS extends CSS by using variables, mixins, operations, and nested rules</li>
+    <li>When JavaScript is asked to compare values of differing data types, it first “coerces” them into a common data type. </li>
+    <li>You can add properties to almost everything in JavaScript!</li>
+    <li>for...in loops iterate over property names, not values</li>
+    <li>all variables declared with the var keyword are scoped to their declaring function. </li>
+    <li>Variables that aren’t explicitly declared can be global</li>
+    <li>JavaScript uses a special prototype property to solve the problems that other languages use classes to solve</li>
+    <li>For more fun info be sure to visit  <a href="https://www.codementor.io/j2jensen/top-ten-things-beginners-must-know-about-javascript-aaeabailp">     codementor</a> and <a href="https://www.smashingmagazine.com/2011/05/10-oddities-and-secrets-about-javascript/">Smashing Magazine</a></li>
+</ol>
+
+</section>
+
+<h2 id="common2">Click on One of the Pictures Below and See What Happens at the Top of this Page!</h2>
+	
+<div>
+	<ul id="lightSlider">
+	  <li><img class="thumbnail-inner" src="" alt="" height="270px" width="300px"/></li>
+      <li><img class="thumbnail-inner" src="" alt="" height="270px" width="300px"/></li>
+	  <li><img class="thumbnail-inner" src="" alt="" height="270px" width="300px"/></li>
+	  <li><img class="thumbnail-inner" src="" alt="" height="270px" width="300px"/></li>
+	  <li><img class="thumbnail-inner" src="" alt="" height="270px" width="300px"/></li>
+	  <li><img class="thumbnail-inner" src="" alt="" height="270px" width="300px"/></li>
+	  <li><img class="thumbnail-inner" src="" alt="" height="270px" width="300px"/></li>
+	  <li><img class="thumbnail-inner" src="" alt="" height="270px" width="300px"/></li>
+	</ul>  
+	</div>
+</div>
+
+<section class="section group2">
+
+<div class="col2 span_1_of_22 col2 span_1_of_32">
+<h3>Know the Differences</h3>
+<p>Website scripts run in one of two places – the client side, also called the front-end, or the server side, also called the back-end. The client of a website refers to the web browser that is viewing it. The server of a website is, of course, the server that hosts it.
+
+Most web coding languages are designed to run on either the server side or the client side. This largely defines how they work. This info was brought to you by <a href=" https://www.codeconquest.com/website/client-side-vs-server-side/"> code conquest </a> </p>
+</div>
+
+<div class="col2 span_1_of_22 col2 span_1_of_32">
+	<h3>Want to Go for a Drive?</h3>
+	<p>Click on the "GO" button to drive an imaginary brand new truck 100 miles. You start with 25 gallons of gas, and you can add 10 gallons of gas if you want to press the "Refuel" button.  How many miles per gallon does this thing get? Click to find out! Under the hood, this uses some JavaScript inheritance.</p>
+	<div class="spacePlease">
+<button onclick ="truckVehicle();">GO</button><button onclick ="refuelMe();">Refuel</button>
+	</div>
+	
+    <h3>Here is another cool trick.... Down below you can use the power of JSON by pressing the "Populate List Box". It will fill in the drop down options below!</h3>
+
+<form>
+<select id="Employees">
+<option>SELECT A FAMILY MEMBER</option>
+</select>
+
+</form>
+
+<button type="button" onclick="getPeople()">Populate List Box</button>
+</div>
+
+<div class="col2 span_1_of_22 col2 span_1_of_32">
+<div>
+<h3>Want a Calculator Built with jQuery?</h3>
+	<p>Put any numbers you want into the "a" and "b" box and then choose what operator you want to use on them. The answer will show up in the "c" box</p>
+<form name="myForm">
+
+<table id="background">
+
+<tr>
+<td colspan="2" class="result">a <input type="text" id="a" size="4" value="" /></td>
+<td colspan="2" class="result">b <input type="text" id="b" size="4" value="" /></td>
+</tr>
+
+<tr>
+<td align="center"><input type="button" value="Add" class="btn-style num-bg operator" /></td>
+<td align="center"><input type="button" value="Subtract" class="btn-style num-bg operator"/></td>
+<td align="center"><input type="button" value="Multiply" class="btn-style num-bg operator"/></td>
+<td align="center"><input type="button" value="Divide" class="btn-style num-bg operator"/></td>
+</tr>
+
+<tr>
+<td colspan="2" class="result">Answer (c) <input type="text" value="" id="c" size="12" /></td>
+<td colspan="2"><input type="button" value="Clear All" class="btn-style num-bg" id="clear" /></td>
+</tr>
+
+</table>
+<p></p>
+
+</form>
+
+</div>
+</div>
+
+</section>
+
+
+<section id="references2" class="section group2">
+
+<div class="col2 span_1_of_22 col2 span_1_of_32">
+<h3>General Information about JavaScript</h3>
+<ul>
+    <li><a href="http://www.stackoverflow.com/" target="_blank">Stackoverflow</a></li>
+    <li><a href="https://en.wikipedia.org/wiki/JavaScript" target="_blank">The JavaScript Wikipedia Site</a></li>
+    <li><a href="https://www.javascript.com/" target="_blank">The official website</a></li>
+</ul>
+</div>
+
+<div class="col2 span_1_of_22 col2 span_1_of_32">
+<h3>More on Node.js</h3>
+<ul>
+    <li><a href="https://en.wikipedia.org/wiki/Node.js" target="_blank">Wikipedia</a></li>
+    <li><a href="https://nodejs.org/en/download/" target="_blank">Download Page</a></li>
+    <li><a href="https://www.w3schools.com/nodejs/nodejs_intro.asphttp://nababutterfly.com/start-butterfly-garden/" target="_blank">Info Through W3Schools</a></li>
+</ul>
+</div>
+
+<div class="col2 span_1_of_22 col2 span_1_of_32">
+<h3 id="greatSites">Cool Sites Using Javascript</h3>
+<ul>
+    <li><a href="https://www.bienvillecapital.com/" target="_blank">Investment site</a></li>
+    <li><a href="https://sidigital.co/" target="_blank">Digital Product Site</a></li>
+    <li><a href="http://www.narrowdesign.com/" target="_blank">Experimental Interface</a></li>
+</ul>
+</div>
+
+</section>
+
+
+<footer>
+
+<p id="designer2">
+Images are licensed under the Creative Commons CC0 from <a href="https://www.pixabay.com">https://www.pixabay.com</a> . Site design by Thomas Nixon 
+</p>
+
+<hr>
+
+<p id="contact2">Thomas Nixon - PCC  - <a href="http://thomasnixon.webhostingforstudents.com/" target="_blank">My WH4S page</a>
+</p>
+
+</footer>
+
+
+	
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	
+<script src="jquery.tiltedpage-scroll.min.js"></script>	
+
+<script src="jquery.tiltedpage-scroll.js"></script>
+
+<script src="scripts/week8.js"></script>
+
+<script src="scripts/week6.js"></script>
+
+<script src="scripts/lightslider.js"></script>	
+
+</body>
+
+</html>

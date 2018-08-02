@@ -1,15 +1,13 @@
 /*
 File Name: navigation.css
-Date: 06/05/18
 Programmer: Thomas Nixon
 */
 
-/* Based on http://kmturley.blogspot.com/2014/06/responsive-mobile-dropdown-navigation.html */
+
 /* Modified for mobile-first design */
 
 /* Set up menu */
 
-/* remove bullet in front of list items in menu */
  
 .header2 ul {
     list-style-type: none;
@@ -118,12 +116,10 @@ Programmer: Thomas Nixon
     top: 0;
 }
 
-/*  TABLET AND DESKTOP: CREATE HORIZONTAL NAVIGATION BAR AT 600 PX OR HIGHER */
+/*  TABLET AND DESKTOP*/
 @media only screen and (min-width: 600px) {
 
-/* Note: We float the entire menu to the right, so it is right-aligned. Then we float each list item to the left,
-so it sits to next to the next item. We have to clear the float in the intro section so the text won't wrap 
-around the menu. You may find it helpful to change 'left' to 'right' to see what happens. */
+/* have to clear the float in the intro section so the text won't wrap around the menu. */
 
 .header2 .menu2 {
     float: left;

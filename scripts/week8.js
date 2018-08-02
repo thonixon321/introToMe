@@ -1,4 +1,4 @@
-/*the lines below are to prevent false errors from jslint or eslint in Brackets*/
+
 
 /*eslint-disable no-unused-vars*/
 /*global $, document, alert, window*/
@@ -7,18 +7,10 @@
 "use strict"; // required by jslint
 
 /*
-File Name: week8.js
-Date: 05/28/18
 Programmer: Thomas Nixon
 */
 
-// The line below is to test your link to the .js file. Please comment it out when it works.
-//alert("the link to the .js file is correct!");
 
-// The line below is to test your link to the jquery.min.js file. Please comment it out when it works.
-//if (window.jQuery) {alert("the link to the jQuery file is correct!"); }
-
-// Enter your jQuery code below this line (put a blank line first).
 
 $(document).ready(function () {
 	
@@ -30,7 +22,7 @@ $(document).ready(function () {
 	
 	var photoCaption;
 	
-	var thumbNames = ["family_small.jpg", "mom_small.jpg", "thomasandsons_small.jpg", "Fulmer_Falls_small.jpg", "Hopetown_Falls_small.jpg", "Jonathans_Run_small.jpg", "Manavgat_small.jpg", "Niagara_Falls_small.jpg"];
+	var thumbNames = ["family_small.jpg", "mom_small.jpg", "thomasandsons_small.jpg", "tommyAndSabby_small.jpg", "Hopetown_Falls_small.jpg", "Jonathans_Run_small.jpg", "Manavgat_small.jpg", "Niagara_Falls_small.jpg"];
 	
 	var current;
 	

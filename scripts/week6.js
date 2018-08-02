@@ -7,14 +7,10 @@
 "use strict"; // required by jslint
 
 /*
-File Name: week6.js
-Date: 05/13/18
 Programmer: Thomas Nixon
 */
 
-// The line below is to test your link to the .js file. 
-//   Please comment it out (put // in front).
-//alert("the link to the .js file is correct!");
+
 $(document).ready(function () {
 	
 
@@ -45,7 +41,7 @@ $(document).ready(function () {
 	if (isNaN(firstNumber) || isNaN(secondNumber)) {
 	alert("Please enter numbers");
 	return;
-	} //error if I indent this further
+	} 
 	
 
         if (button === "Add") {
@@ -69,5 +65,3 @@ $(document).ready(function () {
     }); 
 
 });
-
-// ================================================================================

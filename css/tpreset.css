@@ -1,12 +1,5 @@
 /*
-File Name: reset.css
-Date: 06/05/18
 Programmer: Thomas Nixon
-*/
-
-/* Source: http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
 */
 
 html, body, div, span, applet, object, iframe,
@@ -63,19 +56,6 @@ table {
 
 /*
 BOX-SIZING CHANGE (box-sizing property)
-
-The following CSS changes the default box-sizing of box elements from
-content-box to border-box.
-
-border-box automatically includes border *and* padding sizes into your
-box property widths. No more subtracting padding and border sizes from
-your box widths! Now you can use responsive grids without fear of 
-making your columns too wide and causing that annoying left-right
-scroll bar at the bottom of the page.
-
-Note: this does not take margins into account since margins are 
-not technically part of the box. For those, you will still have to 
-do some subtraction. 
 */
 
 * {
@@ -84,12 +64,7 @@ do some subtraction.
  
 /*
 USE IMAGES, EMBEDS AND OBJECTS FREELY WITHOUT WORRYING ABOUT SIZES AND
-BREAKING YOUR LAYOUTS (max-width property)
-
-The following ensures that images and embedded content you add can't be 
-wider than the box element they are currently in. This is important for 
-responsive design, as this allows you to use images without having to 
-specify width and height attributes in the HTML.
+BREAKING LAYOUTS (max-width property)
 */
 
 img, embed, object {
@@ -98,10 +73,6 @@ img, embed, object {
 
 /*
 DEFAULT BEHAVIOR OF SELECTED HYPERLINKS (outline property)
-
-No more ugly dotted outlines on your active links! This is not very 
-noticeable until it's pointed out, but it makes for a cleaner user
-experience.
 */
 
 a {
